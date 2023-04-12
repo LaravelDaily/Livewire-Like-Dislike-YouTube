@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 
 /*
@@ -20,6 +21,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('users', [UserController::class, 'index'])->name('users.index');
+Route::get('posts', PostController::class)->name('posts');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
