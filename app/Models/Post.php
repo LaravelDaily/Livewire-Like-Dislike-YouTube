@@ -21,11 +21,6 @@ class Post extends Model
         return $this->hasMany(Vote::class);
     }
 
-    public function rating(): int
-    {
-        return $this->votes()->sum('vote');
-    }
-
     public function userVotes(): HasOne
     {
         return $this->votes()->one()->where('user_id', auth()->id());

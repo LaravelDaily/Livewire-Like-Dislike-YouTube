@@ -12,7 +12,7 @@
                     @foreach($posts as $post)
                         <h3 class="text-xl font-medium">{{ $post->title }}</h3>
                         <p>{{ $post->text }}</p>
-                        <livewire:like-dislike :post="$post" />
+                        @livewire('like-dislike', [$post])
                         <hr class="my-4">
                     @endforeach
 
