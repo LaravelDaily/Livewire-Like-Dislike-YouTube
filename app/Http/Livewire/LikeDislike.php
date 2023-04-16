@@ -85,7 +85,7 @@ class LikeDislike extends Component
     {
         throw_if(
             auth()->guest(),
-            ValidationException::withMessages(['unauthenticated' => 'You need to [<a href="' . route('login') . '">login</a>] to click like/dislike'])
+            ValidationException::withMessages(['unauthenticated' => 'You need to <a href="' . route('login') . '" class="underline">login</a> to click like/dislike'])
         );
     }
 
